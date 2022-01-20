@@ -53,7 +53,7 @@ class Inputer():
                 S += float(element)
                 le += 1
         avg = S/le
-        
+
         for i in range(len(l)):
             if (isinstance(l[i],float) or isinstance(l[i],int))==False:
                 l[i] = avg
@@ -63,24 +63,17 @@ class Inputer():
 # Here is a list : [None, 2, 3, 12, 5, 6, None]
 # Here is the list with the empty values replaced by the median : [5, 2, 3, 12, 5, 6, 5]    
 
-    def maximum(self,l):
+    def median(self,l):
         
-        l_numbers = []
-        for element in l:
-            if isinstance(element,float) or isinstance(element,int):
-               l_numbers.append(element)
-        m = min(l_numbers)       
-        M = max(l_numbers)     
-        k = 0  
-        for i in range(len(l)):
-            if (isinstance(l[i],float) or isinstance(l[i],int))==False:
-                if k%2==0:
-                 l[i] = M
-                else:
-                 l[i] = m
-                k += 1 
-                
-        return l 
+        l_numbers = [elt for elt in l if isinstance(elt,float) or isinstance(elt,int)]
+        le = len(l_numbers)
+
+        if le%2 ==1:
+            me = l_numbers[(le-1)//2]
+        else:
+            me = (l_numbers[le//2]+l_numbers[le//2-1])/2
+               
+        return [elt if isinstance(elt,float) or isinstance(elt,int) else me for elt in l]
 
         
 def max_list(l):
