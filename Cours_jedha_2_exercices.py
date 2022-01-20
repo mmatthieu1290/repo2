@@ -82,6 +82,12 @@ def max_list(l):
     l_numbers = [elt for elt in l if isistance(elt,float) or isinstance(elt,int)]
 
     return max(l_numbers)
+
+def min_list(l):
+
+    l_numbers = [elt for elt in l if isistance(elt,float) or isinstance(elt,int)]
+
+    return min(l_numbers)
             
             
             
