@@ -79,13 +79,9 @@ class Inputer():
         
 def max_list(l):
     
-    for elt in l:
-        try:
-            if (isinstance(elt,int) or isinstance(elt,float))and(elt>M):
-                M = elt 
-        except:
-            M = elt
-    return M        
+    l_numbers = [elt for elt in l if isistance(elt,float) or isinstance(elt,int)]
+
+    return max(l_numbers)
             
             
             
