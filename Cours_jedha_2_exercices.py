@@ -67,13 +67,14 @@ class Inputer():
         
         l_numbers = [elt for elt in l if isinstance(elt,float) or isinstance(elt,int)]
         le = len(l_numbers)
+        l_numbers.sort()
 
         if le%2 ==1:
             me = l_numbers[(le-1)//2]
         else:
             me = (l_numbers[le//2]+l_numbers[le//2-1])/2
                
-        return [elt if isinstance(elt,float) or isinstance(elt,int) else me for elt in l]
+        return [elt if (isinstance(elt,float) or isinstance(elt,int)) else me for elt in l]
 
         
 def max_list(l):
