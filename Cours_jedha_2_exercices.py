@@ -70,7 +70,7 @@ class Inputer():
         
 def max_list(l):
     
-    l_numbers = [elt for elt in l if isistance(elt,float) or isinstance(elt,int)]
+    l_numbers = [elt  for elt in l if isistance(elt,float) or isinstance(elt,int)]
 
     return max(l_numbers)
 
