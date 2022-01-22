@@ -45,20 +45,11 @@ class Inputer():
 
     def average(self,l):
         
-
-        S = 0
-        le = 0
-        for element in l:
-            if isinstance(element,float) or isinstance(element,int):
-                S += float(element)
-                le += 1
-        avg = S/le
-
-        for i in range(len(l)):
-            if (isinstance(l[i],float) or isinstance(l[i],int))==False:
-                l[i] = avg
+        l_numbers = [elt for elt in l if isinstance(elt,float) or isinstance(elt,int)]
+        le = len(l_numbers)
+        avg = sum(l_numbers)/le
                 
-        return l  
+        return [elt if isinstance(elt,float) or isinstance(elt,int) else avg for elt in l] 
     
 # Here is a list : [None, 2, 3, 12, 5, 6, None]
 # Here is the list with the empty values replaced by the median : [5, 2, 3, 12, 5, 6, 5]    
